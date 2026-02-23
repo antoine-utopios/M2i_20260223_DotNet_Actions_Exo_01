@@ -11,7 +11,7 @@ describe('an always true assertion', () => {
 describe('App', () => {
   it('renders the App component', () => {
     render(<App />)
-    const textElement = screen.getByText(/Learn GitLab/i);
+    const textElement = screen.getByText(/Welcome to the GitLab/i);
     expect(textElement).toBeInTheDocument();
 
     //screen.debug(); // prints out the jsx in the App component unto the command line
