@@ -8,9 +8,9 @@ on:
 jobs:
   build:
     steps:
-      - name: Récupération du code source:
+      - name: Récupération du code source
         uses: actions/checkout@v6
-        
+
       - name: Installation de Node.js
         uses: actions/setup-node@v6
         with:
