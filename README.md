@@ -1,1 +1,3 @@
-# M2i_20260223_DotNet_Actions_Exo_01
+# Learn GitLab CI/CD
+
+This simple web appplication uses React + Vite. 
