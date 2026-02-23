@@ -1,0 +1,32 @@
+name: Exercice 01 - Démo workflow pour projet Node.js
+
+on:
+  push:
+    branches: ["main", "master"]
+  workflow_dispatch:
+
+jobs:
+  build:
+    steps:
+      - name: Récupération du code source:
+        uses: actions/checkout@v6
+        
+      - name: Installation de Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: '24.13.1'
+          cache: 'npm'
+
+      - name: Installation des dépendances
+        run: npm ci
+
+      - name: Compilation du projet
+        run: npm run build
+
+      - name: Vérification de la Compilation
+        run: |
+          test -f build/index.html
+          cat build/index.html | grep '<div id="root"></div>'
+
+      - name: Réalisation des tests unitaires
+        run: npm run test
